@@ -8,7 +8,7 @@ const TableWeapon = (props) => {
         <div>
             <hr></hr>
             <h2 className="subtitulo">Skins de Armas</h2>
-            <div id="telefonos" className="products">
+            <div className="products">
                 {dataWeapon.length === 0 ? (
                     <div>Sin datos</div>
                 ) : (
