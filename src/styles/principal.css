@@ -1,9 +1,7 @@
 .principal {
-    /* background-color: rgb(59, 59, 243); */
-    color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 2em 0;
     text-align: center;
+    font-weight: 200;
 }
 
 :root {
@@ -17,7 +15,6 @@
 .welcome-text {
     font-size: 30px;
     font-weight: bold;
-    font-style: italic;
     margin: 4em auto;
 }
 
@@ -29,18 +26,24 @@
     border-radius: 1.5em;
     display: block;
     font-size: 1.5em;
-    height: 4em;
+    height: 3em;
     margin: 2em auto;
-    width: 45%;
+    width: 20%;
 }
 
 .sombra {
     -webkit-box-shadow: 10px 10px 0px 0px rgba(240, 229, 72, 1);
     -moz-box-shadow: 10px 10px 0px 0px rgba(240, 229, 72, 1);
     box-shadow: 10px 10px 0px 0px rgba(240, 229, 72, 1);
-    background-color: var(--ohlilac);
+    background-color: #7c63df;
     padding: 2rem;
     margin-bottom: 5rem;
+}
+
+.sombra:hover {
+    background: #3d3071;
+    color: white;
+    font-weight: 700;
 }
 
 .contenido {

@@ -5,10 +5,7 @@ function Navegacion (props) {
         alert('Volver al Index');
     }
     function clientes(){
-        alert("Ir a login de Clientes");
-    }
-    function trabajadores(){
-        alert("Ir a login de Clientes");
+        alert("Ir a login");
     }
     return(
        <ul className="menu">
@@ -16,7 +13,7 @@ function Navegacion (props) {
                <span>TokenManager - Valorant Skins</span>
            </div>
            <div className="comp-menu">
-                <span className="logo">Mi Usuario: {nombre.toUpperCase()}</span>
+                <span className="logo">Bienvenido, {nombre.toUpperCase()}</span>
            </div>
        </ul>
     );

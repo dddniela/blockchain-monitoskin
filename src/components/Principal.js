@@ -1,104 +1,93 @@
-import React   from 'react';
-import { NavLink  } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../styles/principal.css'
 import Navegacion from './Navegacion.js'
-import {Button,Modal,ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label} from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label } from 'reactstrap';
 
 class Principal extends React.Component {
-    dataUsuarios =[];
+    dataUsuarios = [];
     setNombre = null;
     constructor(props) {
         super(props);
         this.dataUsuarios = props.data;
-        this.setNombre=props.setNombre;
+        this.setNombre = props.setNombre;
     }
-    state={
+    state = {
         abierto: false,
-        usuario:''
-      }
-    abrirModal=()=>{
-        this.setState({abierto: !this.state.abierto});
-      }
-    usuarioModal=(x)=>{
-        if(x===1)
-            this.setState({usuario:'cliente'});
-        else
-            this.setState({usuario:'trabajador'});
+        usuario: ''
     }
-    handleSubmit=(e)=>{
+    abrirModal = () => {
+        this.setState({ abierto: !this.state.abierto });
+    }
+    handleSubmit = (e) => {
         let nombre = document.getElementById("usuario").value;
         this.setNombre(nombre);
         let password = document.getElementById("password").value;
         let usuario = this.state.usuario;
         let found = false;
-        this.dataUsuarios.forEach((el,index) => {
-            if(nombre===el.nombre && password ===el.passwd && usuario ===el.estado){
+        this.dataUsuarios.forEach((el, index) => {
+            if (nombre === el.nombre && password === el.passwd) {
                 found = true;
             }
         })
-        if(found){
-            alert("Bienvenido "+nombre);
+        if (found) {
+            alert("Bienvenido " + nombre);
             localStorage.setItem('nombre', JSON.stringify(nombre));
         }
-        else{
+        else {
             alert("Inicio de sesión incorrecto");
             e.preventDefault();
         }
     };
-    
-      
-    render(){
-        const modalStyles={
+
+
+    render() {
+        const modalStyles = {
             position: "absolute",
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)'
-          }
+        }
         return (
             <div>
-                <Navegacion/>
-                    <div className="principal">
-                    <h1>Bienvenido al Sistema TokenManager de TInnovations</h1>
-                    <hr/>
-                    <p className="welcome-text">Por favor, inicia sesión antes de continuar</p>
+                <Navegacion />
+                <div className="principal">
+                    <h1>Bienvenido al Sistema TokenManager de Valorant Skins</h1>
+                    <hr />
+                    <p className="welcome-text">Inicia sesión antes de continuar</p>
                     <div className="btn-login-container">
-                        <Button 
-                            color="success" 
-                            className="btn-login btn btn-info" 
-                            onClick={()=>{this.abrirModal(); this.usuarioModal(1)}}>
-                                Iniciar sesión como cliente</Button>
-                        <Button 
-                            color="success" 
-                            className="btn-login btn btn-info" 
-                            onClick={()=>{this.abrirModal(); this.usuarioModal(2)}}>
-                            Iniciar sesión como trabajador</Button>
+                        <Button
+                            color="success"
+                            className="btn-login btn btn-info"
+                            onClick={() => { this.abrirModal(); }}>
+                            Iniciar sesión</Button>
                     </div>
                     <Modal isOpen={this.state.abierto} style={modalStyles}>
-                    <ModalHeader>
-                    Iniciar Sesión
-                    </ModalHeader>
-                    <ModalBody>
-                    <FormGroup>
-                        <Label for="usuario">Usuario</Label>
-                        <Input type="text" id="usuario" /> 
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="password">Contraseña</Label>
-                        <Input type="password" id="password"/> 
-                    </FormGroup>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button
-                            color="secondary">
-                            <NavLink  
-                                onClick={this.handleSubmit}
-                                to={`/cuerpo/`}
-                                id="enviar"
+                        <ModalHeader>
+                            Iniciar Sesión
+                        </ModalHeader>
+                        <ModalBody>
+                            <FormGroup>
+                                <Label for="usuario">Usuario</Label>
+                                <Input type="text" id="usuario" />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="password">Contraseña</Label>
+                                <Input type="password" id="password" />
+                            </FormGroup>
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button
+                                color="secondary">
+                                <NavLink
+                                    onClick={this.handleSubmit}
+                                    to={`/cuerpo/`}
+                                    id="enviar"
                                 >Iniciar Sesión</NavLink >
-                        </Button>
-                        <Button color="secondary" onClick={this.abrirModal}>Cerrar</Button>
-                    </ModalFooter>
-                </Modal>
+                            </Button>
+                            <Button color="secondary" onClick={this.abrirModal}>Cerrar</Button>
+                        </ModalFooter>
+                    </Modal>
                 </div>
             </div>
         );

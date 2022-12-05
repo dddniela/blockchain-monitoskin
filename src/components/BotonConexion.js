@@ -63,10 +63,10 @@ function BotonConexion (props){
                         <span className="span-connect">No hay conexion</span> 
                         )}
                         {isConnected ? (
-                        <p className="info">🎉 Connected Successfully</p>
+                        <p className="info">🎉 Conectado Exitosamente</p>
                         ) : (
                         <button className="btn btn-success" onClick={connectWallet}>
-                            Connect
+                            Conectar
                         </button>
                         )}
                     </div>
