@@ -1,0 +1,58 @@
+.principal {
+    /* background-color: rgb(59, 59, 243); */
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 2em 0;
+    text-align: center;
+}
+
+:root {
+    --shawol: #88D8C0;
+    --revel: #FFD1C3;
+    --nct: #CCED1D;
+    --ohlilac: #7c63df;
+    --orangeme: #dd8717;
+}
+
+.welcome-text {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 4em auto;
+}
+
+.btn-login-container {
+    display: block;
+}
+
+.btn-login {
+    border-radius: 1.5em;
+    display: block;
+    font-size: 1.5em;
+    height: 4em;
+    margin: 2em auto;
+    width: 45%;
+}
+
+.sombra {
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(240, 229, 72, 1);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(240, 229, 72, 1);
+    box-shadow: 10px 10px 0px 0px rgba(240, 229, 72, 1);
+    background-color: var(--ohlilac);
+    padding: 2rem;
+    margin-bottom: 5rem;
+}
+
+.contenido {
+    display: grid;
+    grid-template-rows: repeat(3, 300px);
+    margin: 0 4em;
+    min-height: 450px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.2em;
+}
